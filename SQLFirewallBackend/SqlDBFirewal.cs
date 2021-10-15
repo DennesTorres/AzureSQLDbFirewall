@@ -26,12 +26,14 @@ namespace SQLFirewallBackend
             string connStr = $"Server=tcp:{auth.ServerName},1433;Database=master;User ID={auth.UserName};Password={auth.Password};Trusted_Connection=False;Encrypt=True;";
             string sqlQuery = "select name from sys.databases";
 
+            log.LogInformation(connStr);
+
             List<string> databases = new List<string>();
 
             SqlConnection connection = new SqlConnection(connStr);
-            SqlCommand cmd = new SqlCommand(sqlQuery, connection);            
+            SqlCommand cmd = new SqlCommand(sqlQuery, connection);
 
-            connection.OpenAsync().Wait();
+            await connection.OpenAsync();
 
             var dr = await cmd.ExecuteReaderAsync();
 
