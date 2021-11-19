@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { FormControl } from '@angular/forms';
+import { GlobalComponent } from '../Common/GlobalComponent';
 
 @Component({
   selector: 'auth-input',
@@ -12,5 +13,9 @@ export class AuthInputComponent {
   password = new FormControl('');
 
   authenticate() {
+    GlobalComponent.serverName = this.serverName.value;
+    GlobalComponent.userName = this.userName.value;
+    GlobalComponent.password = this.password.value;
+    GlobalComponent.setAuthenticated(true);
   }
 }

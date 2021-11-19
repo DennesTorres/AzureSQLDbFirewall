@@ -12,8 +12,9 @@
     <Script Include="**" Exclude="*.esproj;**\node_modules\**" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="src\app\Auth-Input\" />
     <Folder Include="src\app\Hidden-Auth\" />
+    <Folder Include="src\app\Common\" />
+    <Folder Include="src\app\Services\" />
     <Folder Include="src\assets\images\" />
   </ItemGroup>
   <!-- This target is copied from the ASP.NET SPA template in order to ensure node_modules are in place. -->
