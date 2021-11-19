@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Text.RegularExpressions;
 
 namespace Models
 {
+
+    [Serializable]
     public class Authentication
     {
         private string _serverName;

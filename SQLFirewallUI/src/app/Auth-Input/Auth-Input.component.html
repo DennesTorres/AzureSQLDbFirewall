@@ -1,0 +1,12 @@
+<div class="container">
+  <label for="serverName">Server Name: </label>
+  <input id="serverName" type="text" [formControl]="serverName">
+
+  <label for="serverName">User Name: </label>
+  <input id="userName" type="text" [formControl]="userName">
+
+  <label for="password">Password: </label>
+  <input id="password" type="password" [formControl]="password">
+
+  <button (click)="authenticate()">Login</button>
+</div>
